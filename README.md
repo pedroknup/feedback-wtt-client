@@ -1,20 +1,6 @@
 # AvocadoFTW client
 TODO docs
 
-# home
-![](https://i.imgur.com/bbYBe3R.png)
-# Day plan
-![](https://i.imgur.com/jMBLqsY.png)
-# Add meal
-![](https://i.imgur.com/6V820tF.png)
-# Add custom meal
-![](https://i.imgur.com/cs6vg2E.png)
-# Spreadsheet day plan
-![](https://i.imgur.com/oFfQPqQ.png)
-# Spreadsheet Meals
-![](https://i.imgur.com/Y0qItmt.png)
-
-
 ## Build Setup
 ``` bash
 # install dependencies
