@@ -23,8 +23,7 @@
 
 <script>
 export default {
-  name: 'MetaStats',
-  components: {}
+  name: 'MetaStats'
 }
 </script>
 
@@ -89,12 +88,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+
   &-title {
     font-size: 10px;
     font-weight: bold;
     color: #828282;
     margin-bottom: 2px;
   }
+
   &-value {
     font-size: 20px;
     .measure {

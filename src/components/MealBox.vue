@@ -1,9 +1,9 @@
 <template>
-  <div ref="wrapper" class="wrapper-wp">
+  <div ref="wrapper" class="outer-wrapper">
     <div class="pointer" v-if="isCurrentDay"></div>
     <div
       @click="onClickHandler"
-      class="diet-plan-box"
+      class="meal-box"
       :class="{ borderless: !border, expanded: isExpanded, done, selected }"
     >
       <template v-if="!showDetails">
@@ -140,12 +140,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper-wp {
+.outer-wrapper {
   position: relative;
   &.done {
     border: 1px solid red;
   }
 }
+
 .background {
   position: absolute;
   left: 0;
@@ -154,6 +155,7 @@ export default {
   width: 100%;
   z-index: 0;
 }
+
 .quantity {
   background-color: white;
   padding: 2px;
@@ -177,12 +179,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  
   &-title {
     font-size: 12px;
     font-weight: bold;
     color: #828282;
     margin-bottom: 2px;
   }
+  
   &-value {
     text-align: center;
     width: 20px;
@@ -205,6 +209,7 @@ export default {
   user-select: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    
   &.tall-line {
     line-height: 18px;
   }
@@ -219,6 +224,7 @@ export default {
   transition-delay: 0.5s;
   font-size: 18px;
   z-index: 1;
+  
   &-wrapper {
     width: 100px;
     margin-left: 12px;
@@ -230,7 +236,8 @@ export default {
 .calories {
   margin-left: 5px;
 }
-.diet-plan-box {
+
+.meal-box {
   z-index: 2;
   position: relative;
   width: 100%;
