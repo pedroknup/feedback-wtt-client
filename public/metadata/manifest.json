@@ -1,7 +1,6 @@
 {
-  "name": "avocado-ftw",
-  "short_name": "AFTW",
-  "description": "Clearly another meal planner app",
+  "name": "wtt-feedback",
+  "short_name": "wtt-feedback",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",

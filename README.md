@@ -1,4 +1,4 @@
-# AvocadoFTW client
+# WTT feedback client
 TODO docs
 
 ## Build Setup
