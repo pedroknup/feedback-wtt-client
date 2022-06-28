@@ -1,16 +1,14 @@
 <template>
-  <div class="header">
-    <div class="logo">
-      <img :src="logo" alt="logo" />
-    </div>
+  <header>
+    <img :src="logo" alt="logo" />
     <div class="title-wrapper">
-      <div class="title">
-        <span class="avocado">Avocado</span>
-        <span> FTW</span>
-      </div>
-      <div class="subtitle">Clearly another meal planner app</div>
+      <h1>
+        <span>Avocado</span>
+        <span>FTW</span>
+      </h1>
+      <span>Clearly another meal planner app</span>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -26,29 +24,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
+header {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
   justify-content: center;
 }
-div.logo img {
+
+img {
   width: 100px;
 }
-.title {
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(69, 69, 69);
-  .avocado {
-    color: #ffa500;
+
+.title-wrapper {
+  h1 {
+    margin-bottom: 4px;
+
+    span {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(69, 69, 69);
+
+      &:first-child {
+        color: #ffa500;
+        margin-right: 6px;
+      }
+    }
   }
-  &-wrapper {
-    margin-left: 24px;
+  
+  span {
+    font-size: 14px;
+    margin-top: 4px;
+    color: #999;
   }
-}
-.subtitle {
-  font-size: 14px;
-  margin-top: 4px;
-  color: #999;
 }
 </style>
