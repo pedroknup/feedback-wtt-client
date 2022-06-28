@@ -1,9 +1,9 @@
 import { UsersService } from '@/services/users.service'
 
 export default {
-  getCurrent ({ commit }) {
+  loadCurrentUser ({ commit }) {
     const user = localStorage.getItem('user')
-    commit('SET_CURRENT_USER', user)
+    commit('SET_CURRENT_USER', JSON.stringify(user))
     return user
   },
   login ({ commit }, user) {
@@ -11,9 +11,9 @@ export default {
     return UsersService.login(user)
       .then((response) => {
         commit('SET_IS_LOADING', false)
-        commit('weekPlan/SET_CURRENT_META', response.data, { root: true })
+        commit('qa/SET_CURRENT_QA', response.data.QA, { root: true })
         localStorage.setItem('user', user)
-        commit('SET_CURRENT_USER', user)
+        commit('SET_CURRENT_USER', response.data.user)
         return response.data
       })
       .catch((e) => {

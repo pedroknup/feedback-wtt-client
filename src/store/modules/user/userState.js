@@ -1,5 +1,5 @@
 export default {
-  currentUser: '',
+  currentUser: null,
   isLoading: false,
   loginError: null
 }

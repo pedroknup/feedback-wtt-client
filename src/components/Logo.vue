@@ -1,12 +1,12 @@
 <template>
   <header>
-    <img :src="logo" alt="logo" />
+    <!-- <img :src="logo" alt="logo" /> -->
     <div class="title-wrapper">
       <h1>
-        <span>Avocado</span>
-        <span>FTW</span>
+        <span>WTT</span>
+        <span>Feedback</span>
       </h1>
-      <span>Clearly another meal planner app</span>
+      <span>WTT Elite Coaching feedback</span>
     </div>
   </header>
 </template>

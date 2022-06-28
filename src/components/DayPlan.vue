@@ -75,7 +75,7 @@ export default {
       return mealsByMeal
     },
     plan () {
-      return this.$currentWeekPlan[this.name.toLowerCase()]
+      return this.$currentQA[this.name.toLowerCase()]
     }
   },
   mounted () {

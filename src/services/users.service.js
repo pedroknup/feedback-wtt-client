@@ -21,7 +21,7 @@ export class UsersService extends BaseService {
 
   static async login (userId) {
     try {
-      const response = await this.request(userId).get('planner/meta')
+      const response = await this.request(userId).get('qa')
       return new ResponseWrapper(response, response.data)
     } catch (error) {
       const message = error.response.data

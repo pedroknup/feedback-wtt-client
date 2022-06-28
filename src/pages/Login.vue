@@ -22,21 +22,10 @@
     <br />
     <a
       href="#"
-      @click="fillInWith('1_Le40ej1AjZ3DAe75KpyOQ0lLcovSOWPuOg0IW2TufM')"
+      @click="fillInWith('1vHBErn-WHMQT5vueo2XkzyO6zJVvy52rXvXzRyMlArM')"
       >Fill in PK</a
     >
     <br />
-    <a
-      href="#"
-      @click="fillInWith('1ZOvdikJ7GaQWlyY-otKX-TdWXgsmVEjN9Gh78KX3XVQ')"
-      >Fill in Yago</a
-    >
-    <br />
-    <a
-      href="#"
-      @click="fillInWith('1p0G8sZElSti6t1dPCOCuTC87dpRBmpOTm4gFmCgGaeU')"
-      >Fill in Test</a
-    >
   </div>
 </template>
 
@@ -49,12 +38,12 @@ export default {
   components: { Logo, UiInputText },
   data () {
     return {
-      userId: '1_Le40ej1AjZ3DAe75KpyOQ0lLcovSOWPuOg0IW2TufM',
+      userId: '1vHBErn-WHMQT5vueo2XkzyO6zJVvy52rXvXzRyMlArM',
       error: null
     }
   },
   mounted () {
-    this.$store.dispatch('user/getCurrent')
+    this.$store.dispatch('user/loadCurrentUser')
     this.error = null
   },
   methods: {

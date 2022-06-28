@@ -18,7 +18,7 @@ export default {
   name: 'AppLayout',
   components: { LoginView },
   mounted () {
-    this.$store.dispatch('user/getCurrent')
+    this.$store.dispatch('user/loadCurrentUser')
     this.error = null
   }
 }

@@ -1,15 +1,15 @@
 import { BaseService } from './base.service'
 import { ErrorWrapper, ResponseWrapper } from './util'
 
-export class WeekPlanService extends BaseService {
+export class QAService extends BaseService {
   static get entity () {
-    return 'planner'
+    return 'qa'
   }
 
-  static async fetchWeekPlan (userId) {
+  static async fetchQA (userId) {
     try {
       const response = await this.request(userId).get(
-        `${this.entity}/week-plan`
+        `${this.entity}/`
       )
       return new ResponseWrapper(response, response.data)
     } catch (error) {
@@ -23,20 +23,6 @@ export class WeekPlanService extends BaseService {
   static async fetchMeta (userId) {
     try {
       const response = await this.request(userId).get(`${this.entity}/meta`)
-      return new ResponseWrapper(response, response.data)
-    } catch (error) {
-      const message = error.response.data
-        ? error.response.data.error
-        : error.response.statusText
-      throw new ErrorWrapper(error, message)
-    }
-  }
-
-  static async getFoods (userId, updated) {
-    try {
-      const response = await this.request(userId).get(
-        `${this.entity}/foods?updated=${updated}`
-      )
       return new ResponseWrapper(response, response.data)
     } catch (error) {
       const message = error.response.data
