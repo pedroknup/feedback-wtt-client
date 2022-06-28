@@ -1,6 +1,6 @@
 <template>
   <div ref="wrapper" class="outer-wrapper">
-    <div class="pointer" v-if="isCurrentDay"></div>
+    <div class="pointer"></div>
     <div
       @click="onClickHandler"
       class="meal-box"
@@ -110,29 +110,6 @@ export default {
         fat:
           this.meal.fat *
           (this.quantity !== null ? this.quantity : this.meal.quantity)
-      }
-    },
-    isCurrentDay () {
-      const today = new Date()
-      const day = today.getDay()
-      const dayNames = [
-        'sunday',
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday'
-      ]
-      return dayNames[day] === this.name
-    },
-    labelId () {
-      return `inputId${this.getRandomInt()}`
-    },
-    listeners () {
-      return {
-        ...this.$listeners,
-        change: (event) => this.$emit('change', event.target.checked)
       }
     }
   }
