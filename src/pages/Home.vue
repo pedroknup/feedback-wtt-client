@@ -6,9 +6,7 @@
     <template v-if="!$currentQA">
       <span> "No plan for this week" </span>
     </template>
-    <div v-else>
-      <div v-for="item in $currentQA" :key="item._id">{{ item.question }}</div>
-    </div>
+    <QABoxList  v-else />
     <footer>
       <div class="user-info">
         Not {{ $currentUser.name }}? Click <a href="#" @click="logout">here</a>
@@ -21,6 +19,7 @@
 import UiToastList from '../components/UiToastList.vue'
 import Logo from '../components/Logo.vue'
 import OnlineBadge from '../components/OnlineBadge.vue'
+import QABoxList from '../components/QABoxList.vue'
 
 export default {
   name: 'IndexPage',
@@ -28,7 +27,8 @@ export default {
   components: {
     UiToastList,
     Logo,
-    OnlineBadge
+    OnlineBadge,
+    QABoxList
   },
 
   data () {
