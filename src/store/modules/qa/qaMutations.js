@@ -4,5 +4,8 @@ export default {
 
     state.qa = qa
     localStorage.setItem('qa', JSON.stringify(qa))
+  },
+  SET_IS_LOADING_QA (state, isLoading) {
+    state.isLoadingQA = isLoading
   }
 }

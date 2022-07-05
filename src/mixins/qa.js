@@ -4,7 +4,7 @@ export default {
       return this.$store.state.qa.qa
     },
     $isLoadingQA () {
-      return this.$store.state.qa.weekPlan.isLoadingQA
+      return this.$store.state.qa.isLoadingQA
     },
     $isOnline () {
       return this.$store.state.qa.weekPlan.isOnline

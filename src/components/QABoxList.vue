@@ -9,7 +9,7 @@
       ></QABox>
     </div>
     <footer>
-      <button @click="handleSubmitClick">Enviar</button>
+      <button :disabled="$isLoadingQA" @click="handleSubmitClick">Enviar</button>
     </footer>
   </div>
 </template>
@@ -57,6 +57,11 @@ export default {
       padding: 14px 20px;
       border: none;
       cursor: pointer;
+
+      &:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
     }
   }
 }

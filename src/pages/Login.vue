@@ -22,7 +22,7 @@
     <br />
     <a
       href="#"
-      @click="fillInWith('1vHBErn-WHMQT5vueo2XkzyO6zJVvy52rXvXzRyMlArM')"
+      @click="loginWithUserId('1vHBErn-WHMQT5vueo2XkzyO6zJVvy52rXvXzRyMlArM')"
       >Fill in PK</a
     >
     <br />
@@ -38,15 +38,26 @@ export default {
   components: { Logo, UiInputText },
   data () {
     return {
-      userId: '1vHBErn-WHMQT5vueo2XkzyO6zJVvy52rXvXzRyMlArM',
+      userId: '',
       error: null
     }
   },
   mounted () {
     this.$store.dispatch('user/loadCurrentUser')
     this.error = null
+    const userRouteParam = this.$route.params.userId
+    if (userRouteParam) {
+      this.loginWithUserId(userRouteParam)
+    }
   },
   methods: {
+    async loginWithUserId (userId) {
+      try {
+        await this.$store.dispatch('user/login', userId)
+      } catch (e) {
+        this.error = e.statusMessage
+      }
+    },
     onKeyPressHandler (e) {
       if (e.keyCode === 13) {
         this.saveUserId()
@@ -55,15 +66,7 @@ export default {
     async saveUserId () {
       this.error = null
 
-      try {
-        await this.$store.dispatch('user/login', this.userId)
-      } catch (e) {
-        console.log('catch', e.statusMessage)
-        this.error = e.statusMessage
-      }
-    },
-    fillInWith (userId) {
-      this.userId = userId
+      this.loginWithUserId(this.userId)
     }
   }
 }

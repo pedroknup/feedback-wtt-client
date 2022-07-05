@@ -51,6 +51,8 @@ export default {
     },
     logout () {
       this.$store.commit('user/SET_CURRENT_USER', null)
+      this.$route.params.userId = null
+      window.history.pushState({}, '', '/')
       localStorage.removeItem('user')
       localStorage.removeItem('qa')
     },
