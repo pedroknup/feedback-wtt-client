@@ -6,10 +6,10 @@
     <template v-if="!$currentQA">
       <span> "No plan for this week" </span>
     </template>
-    <QABoxList  v-else />
+    <QABoxList v-else />
     <footer>
       <div class="user-info">
-        Not {{ $currentUser.name }}? Click <a href="#" @click="logout">here</a>
+        Autenticado como {{ $currentUser.name }}. Nao e voce? Clique <a href="#" @click="logout">aqui</a>
       </div>
     </footer>
   </section>
@@ -96,7 +96,7 @@ footer {
   height: 100vh;
   max-height: $max-height;
   overflow: hidden;
-  padding-bottom: 40px;
+  padding: 20px 20px 20px 40px;
 
   &.overflow {
     overflow: scroll;

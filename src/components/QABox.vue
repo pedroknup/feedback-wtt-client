@@ -14,6 +14,9 @@ export default {
       type: Object
     }
   },
+  mounted () {
+    this.answer = this.QA.answer
+  },
   data: () => ({
     answer: '',
     error: null

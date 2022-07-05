@@ -12,8 +12,9 @@ export default {
       )
     }
   },
+
   getUpdatedQA ({ commit, dispatch }, userId) {
-    return QAService.fetchWeekPlan(userId)
+    return QAService.fetchQA(userId)
       .then((qa) => {
         commit('SET_CURRENT_QA', qa.data)
       })
@@ -26,22 +27,22 @@ export default {
       )
   },
 
-  async saveCustomMeal ({ commit, dispatch }, { user: userId, meal: food }) {
-    try {
-      const response = await QAService.saveCustomFood(userId, food)
-      dispatch(
-        'toast/fire',
-        { type: 'success', message: 'Food saved!' },
-        { root: true }
+  saveAnswers ({ commit, dispatch }, { user: userId, answers }) {
+    return QAService.writeAnswers(userId, answers)
+      .then((qa) => {
+        commit('SET_CURRENT_QA', qa.data)
+        dispatch(
+          'toast/fire',
+          { type: 'success', message: 'Answers saved!' },
+          { root: true }
+        )
+      })
+      .catch((error) =>
+        dispatch(
+          'toast/fire',
+          { type: 'error', message: error.message },
+          { root: true }
+        )
       )
-      commit('ADD_FOOD', food)
-      return response
-    } catch (error) {
-      dispatch(
-        'toast/fire',
-        { type: 'error', message: error.message },
-        { root: true }
-      )
-    }
   }
 }

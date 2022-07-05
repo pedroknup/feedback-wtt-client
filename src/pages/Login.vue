@@ -2,7 +2,7 @@
   <div class="login">
     <Logo />
 
-    <span> Authentication required </span>
+    <span> Autenticacao requerida </span>
 
     <ui-input-text placeholder="Sheet id" :error="error" v-model="userId" />
     <span class="error">
@@ -15,7 +15,7 @@
         <div></div>
         <div></div>
       </div>
-      Enter
+      Entrar
     </button>
     <br />
     <br />

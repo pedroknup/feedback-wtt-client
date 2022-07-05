@@ -20,21 +20,12 @@ export class QAService extends BaseService {
     }
   }
 
-  static async fetchMeta (userId) {
+  static async writeAnswers (userId, answers) {
     try {
-      const response = await this.request(userId).get(`${this.entity}/meta`)
-      return new ResponseWrapper(response, response.data)
-    } catch (error) {
-      const message = error.response.data
-        ? error.response.data.error
-        : error.response.statusText
-      throw new ErrorWrapper(error, message)
-    }
-  }
-
-  static async saveCustomFood (userId, food) {
-    try {
-      const response = await this.request(userId).post(`${this.entity}/food`, food)
+      const response = await this.request(userId).post(
+        `${this.entity}/`,
+        { answers }
+      )
       return new ResponseWrapper(response, response.data)
     } catch (error) {
       const message = error.response.data

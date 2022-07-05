@@ -1,10 +1,15 @@
 <template>
   <div class="wrapper">
     <div class="qa-box-list">
-      <QABox :QA="QA" v-for="QA in $currentQA" :key="QA._id"></QABox>
+      <QABox
+        :QA="QA"
+        v-for="(QA, index) in $currentQA"
+        :ref="`qa${index}`"
+        :key="QA._id"
+      ></QABox>
     </div>
     <footer>
-      <button>Enviar</button>
+      <button @click="handleSubmitClick">Enviar</button>
     </footer>
   </div>
 </template>
@@ -15,7 +20,18 @@ export default {
   components: { QABox },
   name: 'QABoxList',
   methods: {
-    checkAnswer () {}
+    checkAnswer () {},
+    handleSubmitClick () {
+      const answers = []
+      for (let i = 0; i < this.$currentQA.length; i++) {
+        const qaBox = this.$refs[`qa${i}`][0]
+        if (qaBox.answer) {
+          answers.push(qaBox.answer)
+        }
+      }
+
+      this.$store.dispatch('qa/saveAnswers', { user: this.$currentUser.sheet, answers })
+    }
   }
 }
 </script>
