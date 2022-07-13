@@ -11,7 +11,7 @@ export class QAService extends BaseService {
       const response = await this.request(userId).get(
         `${this.entity}/`
       )
-      return new ResponseWrapper(response, response.data)
+      return new ResponseWrapper(response, response.data.QA)
     } catch (error) {
       const message = error.response.data
         ? error.response.data.error

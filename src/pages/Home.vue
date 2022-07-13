@@ -57,8 +57,8 @@ export default {
       localStorage.removeItem('qa')
     },
     async initialize () {
-      this.$store.dispatch('qa/loadCurrentQA')
       this.$store.dispatch('user/loadCurrentUser')
+      this.$store.dispatch('qa/getUpdatedQA', this.$currentUser.sheet)
     },
     onBlur () {
       console.log('onBlur!!!')

@@ -17,6 +17,7 @@ export default {
     commit('SET_IS_LOADING_QA', true)
     return QAService.fetchQA(userId)
       .then((qa) => {
+        console.log('qa', qa)
         commit('SET_IS_LOADING_QA', false)
         commit('SET_CURRENT_QA', qa.data)
       })
