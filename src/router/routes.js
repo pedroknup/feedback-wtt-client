@@ -13,6 +13,18 @@ export const routes = [
     meta: { title: `${VUE_APP_DOMAIN_TITLE}` }
   },
   {
+    path: '/feedback-wtt-client/',
+    name: 'index',
+    component: homePage,
+    meta: { title: `${VUE_APP_DOMAIN_TITLE}` }
+  },
+  {
+    path: '/feedback-wtt-client/:userId',
+    name: 'index',
+    component: homePage,
+    meta: { title: `${VUE_APP_DOMAIN_TITLE}` }
+  },
+  {
     path: '/:userId',
     name: 'index',
     component: homePage,
