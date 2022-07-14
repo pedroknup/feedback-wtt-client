@@ -27,4 +27,4 @@ tmp/
 tmp_files/
 
 
-.env
+.env*
