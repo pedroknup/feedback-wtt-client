@@ -8,7 +8,7 @@ import $store from '../store'
 import $router from '../router'
 require('dotenv').config()
 
-const { API_URL } = process.env
+const { VUE_APP_API_URL } = process.env
 
 let BEARER = ''
 
@@ -22,7 +22,7 @@ export class AuthService {
   static async makeLogin ({ email, password }) {
     try {
       const fingerprint = await _getFingerprint()
-      const response = await axios.post(`${API_URL}/auth/login`,
+      const response = await axios.post(`${VUE_APP_API_URL}/auth/login`,
         { email, password, fingerprint },
         { withCredentials: true })
       _setAuthData({
@@ -48,7 +48,7 @@ export class AuthService {
 
   static async refreshTokens () {
     try {
-      const response = await axios.post(`${API_URL}/auth/refresh-tokens`, {
+      const response = await axios.post(`${VUE_APP_API_URL}/auth/refresh-tokens`, {
         fingerprint: await _getFingerprint()
       }, { withCredentials: true })
 

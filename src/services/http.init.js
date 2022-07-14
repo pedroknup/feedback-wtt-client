@@ -9,12 +9,12 @@ import axios from 'axios'
 // import { AuthService } from '@/services/auth.service'
 require('dotenv').config()
 
-const { API_URL } = process.env
+const { VUE_APP_API_URL } = process.env
 
 export class Http {
   constructor (user) {
     this.instance = axios.create({
-      baseURL: API_URL,
+      baseURL: VUE_APP_API_URL,
       headers: {
         'x-apikey': '59a7ad19f5a9fa0808f11931',
         user: user,
