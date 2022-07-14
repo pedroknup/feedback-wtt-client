@@ -6,8 +6,9 @@ import { Http } from './http.init'
 import { ResponseWrapper, ErrorWrapper } from './util'
 import $store from '../store'
 import $router from '../router'
+require('dotenv').config()
 
-import { API_URL } from '../.env'
+const { API_URL } = process.env
 
 let BEARER = ''
 

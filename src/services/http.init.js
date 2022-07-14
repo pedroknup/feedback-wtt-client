@@ -7,7 +7,9 @@
 import axios from 'axios'
 
 // import { AuthService } from '@/services/auth.service'
-import { API_URL } from '../.env'
+require('dotenv').config()
+
+const { API_URL } = process.env
 
 export class Http {
   constructor (user) {

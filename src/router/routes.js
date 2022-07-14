@@ -1,7 +1,9 @@
 import homePage from '../pages/Home.vue'
 import notFoundPage from '../pages/NotFound.vue'
 
-import { DOMAIN_TITLE } from '../.env'
+require('dotenv').config()
+
+const { DOMAIN_TITLE } = process.env
 
 export const routes = [
   {
