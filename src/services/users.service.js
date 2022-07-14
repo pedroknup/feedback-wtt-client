@@ -3,7 +3,7 @@ import { ErrorWrapper, ResponseWrapper } from './util'
 
 export class UsersService extends BaseService {
   static get entity () {
-    return 'users'
+    return '/users'
   }
 
   static async getCurrent () {

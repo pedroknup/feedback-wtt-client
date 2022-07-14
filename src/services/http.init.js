@@ -14,7 +14,7 @@ const { VUE_APP_API_URL } = process.env
 export class Http {
   constructor (user) {
     this.instance = axios.create({
-      baseURL: VUE_APP_API_URL,
+      baseURL: 'https://wtt-feedback.herokuapp.com',
       headers: {
         'x-apikey': '59a7ad19f5a9fa0808f11931',
         user: user,

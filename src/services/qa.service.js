@@ -3,7 +3,7 @@ import { ErrorWrapper, ResponseWrapper } from './util'
 
 export class QAService extends BaseService {
   static get entity () {
-    return 'qa'
+    return '/qa'
   }
 
   static async fetchQA (userId) {
